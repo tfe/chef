@@ -18,7 +18,7 @@ development:
   adapter: mysql
   encoding: utf8
   database: chef_development
-  username: root
+  username: chef
   password: foo
   host: localhost
 
@@ -29,7 +29,7 @@ test:
   adapter: mysql
   encoding: utf8
   database: chef_test
-  username: root
+  username: chef
   password: foo
   host: localhost
 
@@ -37,6 +37,6 @@ production:
   adapter: mysql
   encoding: utf8
   database: chef_production
-  username: root
+  username: chef
   password: foo
   host: localhost

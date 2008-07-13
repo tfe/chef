@@ -1,0 +1,83 @@
+<p>
+  <b>First name:</b>
+  <%=h @order.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%=h @order.last_name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @order.email %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h @order.phone %>
+</p>
+
+<p>
+  <b>Bill address:</b>
+  <%=h @order.bill_address %>
+</p>
+
+<p>
+  <b>Bill city:</b>
+  <%=h @order.bill_city %>
+</p>
+
+<p>
+  <b>Bill state:</b>
+  <%=h @order.bill_state %>
+</p>
+
+<p>
+  <b>Bill zip:</b>
+  <%=h @order.bill_zip %>
+</p>
+
+<p>
+  <b>Bill country:</b>
+  <%=h @order.bill_country %>
+</p>
+
+<p>
+  <b>Ship name:</b>
+  <%=h @order.ship_name %>
+</p>
+
+<p>
+  <b>Ship address 1:</b>
+  <%=h @order.ship_address_1 %>
+</p>
+
+<p>
+  <b>Ship address 2:</b>
+  <%=h @order.ship_address_2 %>
+</p>
+
+<p>
+  <b>Ship address 3:</b>
+  <%=h @order.ship_address_3 %>
+</p>
+
+<p>
+  <b>Credit card type:</b>
+  <%=h @order.credit_card_type %>
+</p>
+
+<p>
+  <b>Order date:</b>
+  <%=h @order.order_date %>
+</p>
+
+<p>
+  <b>Ship date:</b>
+  <%=h @order.ship_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

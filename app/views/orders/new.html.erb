@@ -1,0 +1,75 @@
+<h1>New order</h1>
+
+<% form_for(@order) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :bill_address %><br />
+    <%= f.text_field :bill_address %>
+  </p>
+  <p>
+    <%= f.label :bill_city %><br />
+    <%= f.text_field :bill_city %>
+  </p>
+  <p>
+    <%= f.label :bill_state %><br />
+    <%= f.text_field :bill_state %>
+  </p>
+  <p>
+    <%= f.label :bill_zip %><br />
+    <%= f.text_field :bill_zip %>
+  </p>
+  <p>
+    <%= f.label :bill_country %><br />
+    <%= f.text_field :bill_country %>
+  </p>
+  <p>
+    <%= f.label :ship_name %><br />
+    <%= f.text_field :ship_name %>
+  </p>
+  <p>
+    <%= f.label :ship_address_1 %><br />
+    <%= f.text_field :ship_address_1 %>
+  </p>
+  <p>
+    <%= f.label :ship_address_2 %><br />
+    <%= f.text_field :ship_address_2 %>
+  </p>
+  <p>
+    <%= f.label :ship_address_3 %><br />
+    <%= f.text_field :ship_address_3 %>
+  </p>
+  <p>
+    <%= f.label :credit_card_type %><br />
+    <%= f.text_field :credit_card_type %>
+  </p>
+  <p>
+    <%= f.label :order_date %><br />
+    <%= f.date_select :order_date %>
+  </p>
+  <p>
+    <%= f.label :ship_date %><br />
+    <%= f.date_select :ship_date %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', orders_path %>
