@@ -19,7 +19,7 @@ development:
   encoding: utf8
   database: chef_development
   username: root
-  password:
+  password: foo
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -30,7 +30,7 @@ test:
   encoding: utf8
   database: chef_test
   username: root
-  password:
+  password: foo
   host: localhost
 
 production:
@@ -38,5 +38,5 @@ production:
   encoding: utf8
   database: chef_production
   username: root
-  password: 
+  password: foo
   host: localhost
