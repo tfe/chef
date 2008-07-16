@@ -1,0 +1,101 @@
+--- 
+products_001: 
+  price: "10"
+  name: Bhangra in the Burgh 2007 DVD
+  created_at: 2008-07-15 17:17:28
+  updated_at: 2008-07-15 17:25:10
+  short_description: November 3, 2007
+  id: "1"
+  image_url_large: 
+  image_url_small: 
+  description: ""
+products_002: 
+  price: "10"
+  name: One Night in Beijing 2007 DVD
+  created_at: 2008-07-15 17:23:37
+  updated_at: 2008-07-15 17:25:03
+  short_description: Presented by ARCC
+  id: "2"
+  image_url_large: 
+  image_url_small: 
+  description: ""
+products_003: 
+  price: "10"
+  name: Mr. Fraternity 2008 DVD
+  created_at: 2008-07-15 17:24:04
+  updated_at: 2008-07-15 17:24:55
+  short_description: ""
+  id: "3"
+  image_url_large: 
+  image_url_small: 
+  description: ""
+products_004: 
+  price: "10"
+  name: Greek Sing 2008 DVD
+  created_at: 2008-07-15 17:24:17
+  updated_at: 2008-07-15 17:24:45
+  short_description: ""
+  id: "4"
+  image_url_large: 
+  image_url_small: 
+  description: ""
+products_005: 
+  price: "10"
+  name: 2003 Buggy DVD
+  created_at: 2008-07-15 17:25:20
+  updated_at: 2008-07-15 17:25:20
+  short_description: ""
+  id: "5"
+  image_url_large: 
+  image_url_small: 
+  description: ""
+products_006: 
+  price: "10"
+  name: 2004 Buggy DVD
+  created_at: 2008-07-15 17:25:57
+  updated_at: 2008-07-15 17:25:57
+  short_description: ""
+  id: "6"
+  image_url_large: 
+  image_url_small: 
+  description: ""
+products_007: 
+  price: "10"
+  name: 2005 Buggy DVD
+  created_at: 2008-07-15 17:26:17
+  updated_at: 2008-07-15 17:26:17
+  short_description: ""
+  id: "7"
+  image_url_large: 
+  image_url_small: 
+  description: ""
+products_008: 
+  price: "10"
+  name: 2006 Buggy DVD
+  created_at: 2008-07-15 17:26:35
+  updated_at: 2008-07-15 17:26:35
+  short_description: ""
+  id: "8"
+  image_url_large: 
+  image_url_small: 
+  description: ""
+products_009: 
+  price: "15"
+  name: 2007 Buggy DVD Set
+  created_at: 2008-07-15 17:27:34
+  updated_at: 2008-07-15 17:27:34
+  short_description: Raceday DVD and Bonus Video
+  id: "9"
+  image_url_large: 
+  image_url_small: 
+  description: 2007 Buggy DVDs include bonus footage of a presentation by Tom Wood (E'74) on the history of Buggy over the last 30 years.
+products_010: 
+  price: "20"
+  name: 2008 Buggy DVD Set
+  created_at: 2008-07-15 17:32:08
+  updated_at: 2008-07-15 17:32:08
+  short_description: Raceday DVD and Bonus Video
+  id: "10"
+  image_url_large: 
+  image_url_small: 
+  description: 2008 Buggy DVDs will include bonus footage of a <strong>NEW</strong> presentation by Tom Wood (E'74) on the history of Buggy.

@@ -1,0 +1,41 @@
+--- 
+orders_001: 
+  order_date: "2008-06-06"
+  created_at: 2008-07-13 09:32:58
+  bill_zip: "43209"
+  updated_at: 2008-07-16 01:36:13
+  ship_name: Nicholas Wren
+  credit_card_type: Visa
+  ship_address_1: 244 S Ardmore Rd,
+  bill_state: OH
+  id: "1"
+  ship_date: "2008-07-13"
+  ship_address_2: Columbus, OH 43209
+  ship_address_3: 
+  bill_city: Columbus
+  phone: 614-301-4440
+  last_name: Wren
+  bill_country: US
+  bill_address: 244 S Ardmore Rd
+  email: nswren@gmail.com
+  first_name: Nicholas
+orders_002: 
+  order_date: "2008-05-06"
+  created_at: 2008-07-16 05:43:26
+  bill_zip: "15213"
+  updated_at: 2008-07-16 05:43:26
+  ship_name: Alberto Morales
+  credit_card_type: Visa
+  ship_address_1: SMC 7193 Carnegie Mellon University, 5032 Forbes Avenue
+  bill_state: PA
+  id: "2"
+  ship_date: "2008-05-15"
+  ship_address_2: Pittsburgh, PA 15213
+  ship_address_3: 
+  bill_city: Pittsburgh
+  phone: 787-948-4193
+  last_name: Morales
+  bill_country: US
+  bill_address: SMC 7193 Carnegie Mellon University 5032 Forbes Avenue
+  email: ajmorale@andrew.cmu.edu
+  first_name: Alberto

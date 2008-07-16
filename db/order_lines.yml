@@ -1,0 +1,15 @@
+--- 
+order_lines_001: 
+  created_at: 2008-07-16 01:36:13
+  quantity: "2"
+  product_id: "10"
+  updated_at: 2008-07-16 01:36:13
+  order_id: "1"
+  id: "1"
+order_lines_002: 
+  created_at: 2008-07-16 06:36:21
+  quantity: "1"
+  product_id: "10"
+  updated_at: 2008-07-16 06:36:21
+  order_id: "2"
+  id: "2"
