@@ -1,0 +1,34 @@
+development:
+  :server: "imap.gmail.com"
+  :type: "imap"
+  :ssl: true
+  :use_login: true
+  :port: 993
+  :username: "store@cmutv.org"
+  :password: "foo"
+  :processed_folder: "Chef - Fetched"
+  :error_folder: "Chef - Error Fetching"
+  :receiver: "Mailer"
+test:
+  :server: "imap.gmail.com"
+  :type: "imap"
+  :ssl: true
+  :use_login: true
+  :port: 993
+  :username: "store@cmutv.org"
+  :password: "foo"
+  :processed_folder: "Imported by Chef"
+  :error_folder: "Failed Import by Chef"
+  :receiver: "Mailer"
+production:
+  :server: "imap.gmail.com"
+  :type: "imap"
+  :ssl: true
+  :use_login: true
+  :port: 993
+  :username: "store@cmutv.org"
+  :password: "foo"
+  :processed_folder: "Imported by Chef"
+  :error_folder: "Failed Import by Chef"
+  :receiver: "Mailer"
+  
