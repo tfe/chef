@@ -1,11 +1,14 @@
 class Mailer < ActionMailer::Base
   
   def receive(email)
-    # just dumping basic parts of the email to console for now until persisting to database is implemented
-    puts email.to
-    puts email.from
-    puts email.subject
-    puts email.body
+    Email.create(
+      :to       => email.to.join(', '), 
+      :from     => email.from.join(', '), 
+      :reply_to => email.reply_to.join(', '), 
+      :date     => email.date, 
+      :subject  => email.subject, 
+      :body     => email.body
+    )
   end
 
 end

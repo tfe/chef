@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :emails
+
   
   map.resources :order_lines, :active_scaffold => true
   map.resources :products, :active_scaffold => true
