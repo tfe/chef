@@ -1,10 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
 
   
-  map.resources :order_lines, :belongs_to => [ :products, :orders ],  :active_scaffold => true
+  map.resources :order_lines, :belongs_to => [ :product, :order ],    :active_scaffold => true
   map.resources :products,    :has_many => :order_lines,              :active_scaffold => true
-  map.resources :orders,      :has_many => :order_lines,              :active_scaffold => true
-  map.resources :emails,                                              :active_scaffold => true
+  map.resources :orders,      :has_many => [ :order_lines, :emails ], :active_scaffold => true
+  map.resources :emails,      :belongs_to => :order,                  :active_scaffold => true
   
   # The priority is based upon order of creation: first created -> highest priority.
 

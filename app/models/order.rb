@@ -2,6 +2,7 @@ class Order < ActiveRecord::Base
   
   has_many :order_lines, :dependent => :destroy  # when orders are deleted, delete associated order lines
   has_many :products, :through => :order_lines
+  has_many :emails
   
   # no validation really needed here. 
   # we'll assume CMU's e-commerce system validates everything and that our parser works
@@ -12,21 +13,21 @@ class Order < ActiveRecord::Base
   end
   
   # make it easy to refer to the whole customer name (http://railscasts.com/episodes/16)
-  def full_name
-    [first_name, last_name].join(' ')
-  end
   def bill_name
     full_name
   end
+  def bill_name=(name)
+    self.full_name=(name)
+  end
   
+  def full_name
+    [first_name, last_name].join(' ').strip
+  end
   def full_name=(name)
     # we're assuming no one will ever have a space in their last name
     split = name.split(' ')
     self.last_name = split.pop
     self.first_name = split.join(' ')
-  end
-  def bill_name=(name)
-    full_name name
   end
   
   # make it easy to refer to the whole billing address (http://railscasts.com/episodes/16)
