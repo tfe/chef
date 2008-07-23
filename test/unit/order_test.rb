@@ -3,6 +3,16 @@ require 'test_helper'
 class OrderTest < ActiveSupport::TestCase
   
   # 
+  # shipped? tests
+  # 
+  def test_shipped?
+    assert  Order.new(:ship_date => Time.now).shipped?, 'order has a ship date'
+    assert !Order.new.shipped?, 'order is blank'
+    assert !Order.new(:ship_date => nil).shipped?, 'order has a nil ship date'
+    assert !Order.new(:ship_date => '').shipped?, 'order has an empty ship date'
+  end
+  
+  # 
   # name tests
   # 
   def test_full_name_get
