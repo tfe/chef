@@ -12,6 +12,11 @@ class Order < ActiveRecord::Base
     "Order ##{id}"
   end
   
+  # if the ship_date isn't filled in, then the order hasn't shipped
+  def shipped?
+    ! ship_date.blank?
+  end
+  
   # make it easy to refer to the whole customer name (http://railscasts.com/episodes/16)
   def bill_name
     full_name
