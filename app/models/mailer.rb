@@ -7,8 +7,30 @@ class Mailer < ActionMailer::Base
       :reply_to => email.reply_to.join(', '), 
       :date     => email.date, 
       :subject  => email.subject, 
-      :body     => email.body
+      :body     => body_as_plain_text(email)
     )
   end
-
+  
+  private 
+  
+  # get the body as plain text
+  # derived from: http://lists.rubyonrails.org/pipermail/rails/2006-May/043429.html
+  def body_as_plain_text(part)
+    body = ''
+    if part.multipart?
+      part.parts.each do |subpart|
+        if subpart.content_type == 'text/plain' and
+           (subpart.content_disposition.nil? or 
+            subpart.content_disposition == 'inline')
+          body << subpart.body
+        elsif subpart.content_type =~ /^multipart/
+          body << body_as_plain_text(subpart)
+        end
+      end
+    else
+      body = part.body
+    end
+    body
+  end
+  
 end
