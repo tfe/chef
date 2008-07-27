@@ -79,7 +79,8 @@ class Email < ActiveRecord::Base
         OrderLine.create(
           :product  => product,
           :order    => order,
-          :quantity => item['Qty']
+          :quantity => item['Qty'],
+          :unit_price => item['Price_Each']
         )
       end
     end
