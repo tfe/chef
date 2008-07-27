@@ -7,6 +7,8 @@ class Order < ActiveRecord::Base
   # no validation really needed here. 
   # we'll assume CMU's e-commerce system validates everything and that our parser works
   
+  alias_attribute :bill_name, :full_name
+  
   # Define a sane way to label orders so we don't get labels like: #<Order:0x7e63b644>
   def to_label
     "Order ##{id}"
@@ -15,14 +17,6 @@ class Order < ActiveRecord::Base
   # if the ship_date isn't filled in, then the order hasn't shipped
   def shipped?
     ! ship_date.blank?
-  end
-  
-  # make it easy to refer to the whole customer name (http://railscasts.com/episodes/16)
-  def bill_name
-    full_name
-  end
-  def bill_name=(name)
-    self.full_name=(name)
   end
   
   def full_name
