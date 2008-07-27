@@ -15,6 +15,10 @@ class OrderTest < ActiveSupport::TestCase
   # 
   # name tests
   # 
+  def test_bill_name
+    assert_equal 'John Doe', Order.new(:bill_name => 'John Doe').bill_name
+  end
+  
   def test_full_name_get
     assert_equal 'John Doe', full_name('John', 'Doe'), 'standard name'
     assert_equal 'John James Doe', full_name('John James', 'Doe'), 'first name with spaces'
