@@ -4,11 +4,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>cmuTV Chef: <%= yield(:title) || "Web Store Order Handling" %></title>
+  <title>cmuTV Chef: <%= yield(:title) || params['controller'].humanize || "Web Store Order Handling" %></title>
+  <%= stylesheet_link_tag "default" %>
   <%= javascript_include_tag :defaults %>
   <%= active_scaffold_includes %>
 </head>
 <body>
+
+<div id="header" class="active-scaffold-header">
+
+  <h1>cmuTV Chef: <%= yield(:title) || params['controller'].humanize || "Web Store Order Handling" %></h1>
+  
+  <ul class="navigation">
+    <li><%= link_to_unless_current 'Orders', orders_path %></li>
+    <li><%= link_to_unless_current 'Products', products_path %></li>
+    <li><%= link_to_unless_current 'Order Lines', order_lines_path %></li>
+    <li><%= link_to_unless_current 'Emails', emails_path %></li>
+  </ul>
+
+</div>
 
 <p style="color: green"><%= flash[:notice] %></p>
 
