@@ -2,6 +2,11 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
+  
+  # authenticate before everything
+  # http://railscasts.com/episodes/82-http-basic-authentication
+  before_filter :authenticate
+  
   helper :all # include all helpers, all the time
 
   # See ActionController::RequestForgeryProtection for details
@@ -15,6 +20,18 @@ class ApplicationController < ActionController::Base
   
   ActiveScaffold.set_defaults do |config| 
     config.ignore_columns.add [:created_at, :updated_at, :order_lines]
+  end
+  
+  
+  protected
+  
+  # authenticate with HTTP BASIC
+  # http://railscasts.com/episodes/82-http-basic-authentication
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+      username == APP_CONFIG['username'] && 
+      password == APP_CONFIG['password']
+    end
   end
   
 end

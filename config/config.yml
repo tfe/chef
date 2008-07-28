@@ -1,16 +1,14 @@
 # App-wide configurations for Chef (http://railscasts.com/episodes/85)
-# Plus a trick to make dev and test the same (http://code.google.com/p/rails-appconfig-generator/)
-# I do plan on eventually using the authentication stuff, so leaving it in for now.
+# Plus a trick to make generalize configs (http://code.google.com/p/rails-appconfig-generator/)
 
-development: &non_production_settings 
-  perform_authentication: false
+development: &general_settings 
+  perform_authentication: true
+  username: cmutv
+  password: foo
   order_notification_from_address: 'creditcard_info@cmu.edu'
 
 test: 
-  <<: *non_production_settings 
+  <<: *general_settings 
 
 production:
-  perform_authentication: true
-  username: admin
-  password: secret
-  order_notification_from_address: 'creditcard_info@cmu.edu'
+  <<: *general_settings 
