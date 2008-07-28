@@ -22,6 +22,9 @@ class Email < ActiveRecord::Base
       end
     end
     
+    # quit if notification has an error flag
+    return if body_as_h.include? 'Error_Flag'
+    
     # create an order with the fields we want
     order = Order.create(
       :first_name       => body_as_h['First_Name'], 
