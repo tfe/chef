@@ -30,7 +30,10 @@ Net::SMTP.class_eval do
   
   def do_tls_start(helodomain, user, secret, authtype)
     raise IOError, 'SMTP session already started' if @started
-    check_auth_args user, secret, authtype if user or secret
+    # editing this to mitigate change in ruby 1.8.7 that breaks this plugin
+    # see the comment by "Burt" on this page: http://douglasfshearer.com/blog/gmail-smtp-with-ruby-on-rails-and-actionmailer
+    # check_auth_args user, secret, authtype if user or secret
+    check_auth_args user, secret if user or secret
 
     sock = timeout(@open_timeout) { TCPSocket.open(@address, @port) }
     @socket = Net::InternetMessageIO.new(sock)
