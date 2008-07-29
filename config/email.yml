@@ -1,0 +1,8 @@
+development:
+  server: smtp.gmail.com
+  port: 587
+  tls: 'true'
+  authentication: plain
+  domain: cmutv.org
+  username: store@cmutv.org
+  password: foo
