@@ -11,6 +11,17 @@ class Mailer < ActionMailer::Base
     )
   end
   
+  def confirmation(order)
+    recipients    order.email_with_name
+    # Gmail will always use the address you're authenticated as when sending for the "from". 
+    # Setting it like this allows us to use the email address with a name.
+    from          APP_CONFIG['order_confirmation_email']['from_address_with_name'] 
+    reply_to      APP_CONFIG['order_confirmation_email']['reply-to_address_with_name']
+    subject       APP_CONFIG['order_confirmation_email']['subject']
+    sent_on       Time.now
+  end
+  
+  
   private 
   
   # get the body as plain text

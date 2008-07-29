@@ -6,6 +6,12 @@ development: &general_settings
   username: cmutv
   password: foo
   order_notification_from_address: 'creditcard_info@cmu.edu'
+  order_confirmation_email:
+    from_address: 'store@cmutv.org'
+    from_address_with_name: '"cmuTV Web Store" <store@cmutv.org>'
+    reply-to_address: 'store@cmutv.org'
+    reply-to_address_with_name: '"cmuTV Web Store" <store@cmutv.org>'
+    subject: Your Order with cmuTV
 
 test: 
   <<: *general_settings 
