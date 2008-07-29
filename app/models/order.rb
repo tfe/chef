@@ -14,6 +14,11 @@ class Order < ActiveRecord::Base
     "Order ##{id}"
   end
   
+  # pretty email address
+  def email_with_name
+    "\"#{full_name}\" <#{email}>"
+  end
+  
   # if the ship_date isn't filled in, then the order hasn't shipped
   def shipped?
     ! ship_date.blank?

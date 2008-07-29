@@ -2,6 +2,11 @@ require 'test_helper'
 
 class OrderTest < ActiveSupport::TestCase
   
+  # email address with name
+  def test_email_with_name
+    assert_equal '"John Doe" <john@doe.com>', Order.new(:first_name => 'John', :last_name => 'Doe', :email => 'john@doe.com').email_with_name
+  end
+  
   # 
   # shipped? tests
   # 
