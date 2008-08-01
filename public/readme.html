@@ -18,9 +18,10 @@
 <h2>Data Flow</h2>
 <p>This is how data flows into, through, and out of the application:</p>
 <ol>
+  <li>When an order is placed (or attempted, CC validation failures are sent also), CMU's order processing system sends a notification email to the address passed to it with the order data (see: http://cmutv.grouphub.com/projects/2243749/msg/cat/22372554/14888159/comments). For this to work, this must be set to the same mailbox that the app is checking (store@cmutv.org, configurable in /config/mail_fetcher.yml).
   <li>The application checks the store@cmutv.org mailbox over IMAP using the credentials in /config/mail_fetcher.yml.</li>
   <li>Emails found to be from the CMU order processing system (using the address listed in /config/config.yml) are fetched, stored in the database, and moved to the IMAP folder 'Chef - Fetched' (folder name set in /config/mail_fetcher.yml).</li>
-  <li>Emails not found to be from the order processing system are moved to the IMAP folder 'INBOX' (also configured in /config/mail_fetcher.yml), effectively leaving them where they are. This logic is implemented in the ActionMailer receive method, which returns true if the message should be fetched and false if it should be left in the inbox.</li>
+  <li>Emails not found to be from the order processing system are moved to the IMAP folder 'INBOX' (also configured in /config/mail_fetcher.yml), effectively leaving them where they are. This logic is implemented in the ActionMailer receive method, which returns normally if the message should be fetched and throws an exception if it should be left in the inbox.</li>
   <li>Before emails are created (saved to the database for the first time), parse_to_order is called on them. This goes through the email and pulls out the billing/shipping data, and the line items and products in the order.</li>
   <li>Before orders are created (saved to the database for the first time), deliver_confirmation is called on them (this is implemented in the ActionMailer).  This delivers a confirmation email to the customer through Gmail's SMTP servers with store@cmutv.org's credentials (stored in in /config/config.yml).  The subject, from address, reply-to, etc. are customizable in /config/config.yml.</li>
 </ol>
