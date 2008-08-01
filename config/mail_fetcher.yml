@@ -8,7 +8,7 @@ development: &general_settings
   :password: "foo"
   :processed_folder: "Chef - Fetched"
   :error_folder: "INBOX"
-  :receiver: "Mailer"
+  :receiver: "OrderMailer"
   
 test:
   <<: *general_settings 

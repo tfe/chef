@@ -1,4 +1,4 @@
-class Mailer < ActionMailer::Base
+class OrderMailer < ActionMailer::Base
   
   # process emails, generally from Fetcher
   # returns normally or raises an exception based on whether email was processed succesfully
