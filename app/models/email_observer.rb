@@ -1,12 +1,8 @@
 class EmailObserver < ActiveRecord::Observer
   
-  # catch emails before they're created and see if they are a notification email 
-  # so we can parse and add the order_id to the email
+  # parse emails before they are created
   def before_create(email)
-    # see if this is an order notification email
-    if email.from.include? APP_CONFIG['order_notification_from_address']
-      email.parse_to_order
-    end
+    email.parse_to_order
   end
   
 end

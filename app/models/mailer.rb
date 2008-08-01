@@ -1,6 +1,14 @@
 class Mailer < ActionMailer::Base
   
+  # process emails, generally from Fetcher
+  # returns normally or raises an exception based on whether email was processed succesfully
+  # (in this context, whether it was an order notification email or not)
   def receive(email)
+    unless email.from.include? APP_CONFIG['order_notification_from_address']
+      logger.info "Email rejected, not an order notification: #{email.subject}"
+      raise "Not an order notification email"
+    end
+    logger.info "Creating email: #{email.subject}"
     Email.create(
       :to       => email.to.join(', '), 
       :from     => email.from.join(', '), 
@@ -12,7 +20,12 @@ class Mailer < ActionMailer::Base
   end
   
   def confirmation(order)
-    recipients    order.email_with_name
+    # keep from sending emails to random people in dev and testing environments
+    if RAILS_ENV == 'production'
+      recipients  order.email_with_name
+    else
+      recipients  APP_CONFIG['order_confirmation_email']['test_recipient'] 
+    end
     # Gmail will always use the address you're authenticated as when sending for the "from". 
     # Setting it like this allows us to use the email address with a name.
     from          APP_CONFIG['order_confirmation_email']['from_address_with_name'] 

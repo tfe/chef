@@ -12,6 +12,7 @@ development: &general_settings
     reply-to_address: 'store@cmutv.org'
     reply-to_address_with_name: '"cmuTV Web Store" <store@cmutv.org>'
     subject: Your Order with cmuTV
+    test_recipient: 'cmutv@cmutv.org'
 
 test: 
   <<: *general_settings 

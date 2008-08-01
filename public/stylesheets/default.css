@@ -14,13 +14,28 @@ body {
   font-family: "Lucida Grande", "Bitstream Vera Sans", "Arial", sans-serif;
 }
 
+a:link, a:visited, a:active {
+  color: #0066CC;
+}
 
-/* Header
+a:hover {
+  color: #0066CC;
+  background-color: #FFFF88;
+}
+
+
+/* Main Sections
 ----------------------------------------------- */
 
 #header h1 {
   font-size: 2em;
   font-weight: bold;
+}
+
+#footer {
+  font-size: .9em;
+  text-align: center;
+  margin-top: 5em;
 }
 
 
@@ -46,13 +61,11 @@ ul.navigation a {
 }
 
 ul.navigation a:link, ul.navigation a:visited {
-  color: #0066CC;
   background-color: #E6F2FF;
   text-decoration: none;
 }
 
 ul.navigation a:hover {
-  color: #0066CC;
   background-color: #FFFF88;
   text-decoration: none;
 }
