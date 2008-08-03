@@ -77,7 +77,7 @@ class Email < ActiveRecord::Base
     # find the actual Products in array of items, create order lines
     # 
     items.each do |item|
-      unless item['Sku'].blank?  # keep blank SKUs out (filter out sales tax item)
+      unless item['Sku'].blank?  # keep blank SKUs out
         product = Product.find_by_sku(item['Sku'])
         OrderLine.create(
           :product  => product,
