@@ -17,6 +17,31 @@ class OrderTest < ActiveSupport::TestCase
     assert !Order.new(:ship_date => '').shipped?, 'order has an empty ship date'
   end
   
+  # grand total
+  def test_grand_total
+    
+    sum = Money.new(0)
+    
+    # make a new order and some products to play with
+    order = Order.create()
+    
+    4.times do 
+      product = Product.create(:price => rand(9999)/100)
+      qty = rand(9)
+      # create some order lines for it
+      ol = OrderLine.create(
+        :product => product,
+        :order => order,
+        :quantity => qty,
+        :unit_price => product.price
+      )
+      sum += product.price * qty
+    end
+    
+    # assert
+    assert_equal sum, order.grand_total
+  end
+  
   # 
   # name tests
   # 

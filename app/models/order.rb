@@ -24,6 +24,17 @@ class Order < ActiveRecord::Base
     ! ship_date.blank?
   end
   
+  # sum up all the order lines for this order to get a grand total
+  def grand_total
+    order_lines.inject(Money.new(0)) { |grand_total, line| grand_total + line.total_price }
+  end
+  
+  
+  
+  # 
+  # Name and Address stuff
+  #
+  
   def full_name
     [first_name, last_name].join(' ').strip
   end

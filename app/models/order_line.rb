@@ -8,4 +8,9 @@ class OrderLine < ActiveRecord::Base
    "(#{quantity}) #{product.name}"
   end
   
+  # total price for this order line
+  def total_price
+    unit_price * quantity
+  end
+  
 end
